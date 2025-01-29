@@ -1,165 +1,504 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>IIT Delhi 2024-25</title>
+    <title>CML101 Course Material</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Course materials and tutorials for CML101.">
+    <meta name="author" content="ATUL">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+
+    
     <style>
-        body {
-            background-image: url('https://imgs.search.brave.com/veemZ7bpeX3eQ6Nd-MU_5_MyeKB4CHzGo_-aZJx5JFM/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/cGl4YWJheS5jb20v/cGhvdG8vMjAxNy8x/MC8zMS8xNy80NC9j/aGVycmllcy0yOTA1/OTY0XzY0MC5qcGc');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            margin: 0;
-            padding: 0;
+    body {
+        background-image: url('https://wallpapercave.com/wp/bzxfDoE.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        margin: 0;
+        padding: 0;
+        font-family: 'Roboto', Arial, sans-serif;
+        color: white;
+    }
+
+    .contact-email {
+        color: white;
+    }
+
+    .contact-link {
+        color: white;
+    }
+
+    .contact-link a {
+        color: white;
+    }
+
+    .contact-link {
+        color: white;
+    }
+
+    h1, h2 {
+        text-align: center;
+        margin: 20px 0;
+    }
+
+    h1 {
+        font-size: 3em;
+        color: #FFD700;
+        text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7), 0 0 20px #FF4500;
+        animation: glow 1.5s infinite alternate;
+        background: linear-gradient(90deg, #FF6347, #FFD700, #32CD32);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    .dropdown {
+        margin: 20px auto;
+        background-color: rgba(255, 255, 255, 0.9);
+        color: #333;
+        border-radius: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        transition: margin-bottom 0.3s ease;
+        width: 90%; /* Adjust width for smaller screens */
+        max-width: 800px; /* Limit the maximum width */
+    }
+
+    .dropdown-header {
+        padding: 12px 20px;
+        font-size: 1.2em;
+        font-weight: bold;
+        background-color: #62a4e9;
+        color: white;
+        cursor: pointer;
+        text-align: center;
+        border-radius: 10px;
+        transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .dropdown-header:hover {
+        background-color: #0056b3;
+        transform: scale(1.05);
+    }
+
+    .dropdown-content {
+        max-height: 0;
+        overflow: hidden;
+        background-color: rgba(26, 86, 135, 0.8);
+        transition: max-height 0.5s ease;
+    }
+
+    .dropdown-content.open {
+        max-height: 500px;
+        overflow-y: auto;
+    }
+
+    .dropdown-content a {
+        display: block;
+        padding: 10px;
+        color: white;
+        text-decoration: none;
+        text-align: center;
+        background-color: #0a5068;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .dropdown-content a:hover {
+        background-color: #0056b3;
+    }
+
+    .dropdown-content::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .dropdown-content::-webkit-scrollbar-thumb {
+        background-color: #62a4e9;
+        border-radius: 10px;
+    }
+
+    footer {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 14px;
+    }
+
+    /* Media Queries for Responsiveness */
+    @media (max-width: 768px) {
+        .dropdown-header {
+            font-size: 1em; /* Reduce font size for smaller screens */
         }
 
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            font-size: 16px;
-            color: rgb(0, 0, 0);
-            background-color: #62a4e9;
-            border: none;
-            border-radius: 5px;
-            text-align: center;
-            text-decoration: none;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            margin: 0 auto;
-            display: block;
-        }
-
-        .button:hover {
-            background-color: #0056b3;
-        }
-
-        .container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            padding: 20px;
-        }
-
-        .column {
-            background-color: rgba(255, 255, 255, 0.8);
-            border-radius: 10px;
-            padding: 15px;
-            overflow: hidden;
+        .dropdown-content a {
+            font-size: 0.9em; /* Reduce link size for smaller screens */
+            padding: 8px; /* Reduce padding for smaller screens */
         }
 
         h1 {
-            text-align: center;
-            color: #de830c;
-            font-size: 24px;
+            font-size: 2em; /* Adjust heading size for smaller screens */
         }
 
         h2 {
-            text-align: center;
-            color: #333;
+            font-size: 1.5em; /* Adjust subheading size for smaller screens */
         }
+    }
+</style>
 
-        ul {
-            list-style: none;
-            padding: 0;
-        }
 
-        ul li {
-            margin: 10px 0;
-        }
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const outerDropdowns = document.querySelectorAll('.dropdown.outer');
 
-        footer {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 14px;
-        }
+            outerDropdowns.forEach(outer => {
+                const outerHeader = outer.querySelector('.dropdown-header');
+                const outerContent = outer.querySelector('.dropdown-content');
 
-        .bottom-button {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            padding: 10px 20px;
-            font-size: 16px;
-            color: rgb(255, 255, 255);
-            background-color: #0a5068;
-            border: none;
-            border-radius: 5px;
-            text-align: center;
-            text-decoration: none;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
+                outerHeader.addEventListener('click', (event) => {
+                    event.stopPropagation();
+                    const isOpen = outerContent.classList.contains('open');
+                    closeAllDropdowns();
+                    if (!isOpen) {
+                        outerContent.classList.add('open');
+                    }
+                });
 
-        .bottom-button:hover {
-            background-color: #0056b3;
-        }
+                const innerDropdowns = outer.querySelectorAll('.dropdown.inner');
+                innerDropdowns.forEach(inner => {
+                    const innerHeader = inner.querySelector('.dropdown-header');
+                    const innerContent = inner.querySelector('.dropdown-content');
 
-        @media (max-width: 768px) {
-            .container {
-                grid-template-columns: 1fr;
+                    innerHeader.addEventListener('click', (event) => {
+                        event.stopPropagation();
+                        const isOpen = innerContent.classList.contains('open');
+                        closeInnerDropdowns(outer);
+                        if (!isOpen) {
+                            innerContent.classList.add('open');
+                        }
+                    });
+
+                    const innerMostDropdowns = inner.querySelectorAll('.dropdown.inner-most');
+                    innerMostDropdowns.forEach(innerMost => {
+                        const innerMostHeader = innerMost.querySelector('.dropdown-header');
+                        const innerMostContent = innerMost.querySelector('.dropdown-content');
+
+                        innerMostHeader.addEventListener('click', (event) => {
+                            event.stopPropagation();
+                            const isOpen = innerMostContent.classList.contains('open');
+                            closeInnerMostDropdowns(inner);
+                            if (!isOpen) {
+                                innerMostContent.classList.add('open');
+                            }
+                        });
+                    });
+                });
+            });
+
+            function closeAllDropdowns() {
+                document.querySelectorAll('.dropdown-content').forEach(content => {
+                    content.classList.remove('open');
+                });
             }
 
-            h1 {
-                font-size: 18px;
+            function closeInnerDropdowns(outer) {
+                outer.querySelectorAll('.dropdown.inner .dropdown-content').forEach(content => {
+                    content.classList.remove('open');
+                });
             }
-        }
-    </style>
+
+            function closeInnerMostDropdowns(inner) {
+                inner.querySelectorAll('.dropdown.inner-most .dropdown-content').forEach(content => {
+                    content.classList.remove('open');
+                });
+            }
+
+            document.addEventListener('click', () => {
+                closeAllDropdowns();
+            });
+        });
+    </script>
 </head>
 <body>
-    <h1><a href="https://dalla111.github.io/homepage/" ><img src="https://jwalamukhi.iitd.ac.in/images/Jwala_logo_extra_small_2.png" alt="Logo" ></a> IIT Delhi 2024-25</h1>
-
+    <h1><a href="https://dalla111.github.io/homepage/" ><img src="https://jwalamukhi.iitd.ac.in/images/Jwala_logo_extra_small_2.png" alt="Logo" ></a>CML101 Course Material</h1>
     <div class="container">
-        <div class="column">
-            <h2>Minor 1</h2>
-            <ul>
-                <li><a href="https://bsw.iitd.ac.in/studydatabase/CML/CML100/minor1/CML100_Minor1_2014-15_Sem2.pdf" target="_blank" class="button">Sem2 | 2014-15</a></li>
-                <li><a href="https://bsw.iitd.ac.in/studydatabase/CML/CML100/minor1/CML100_Minor1_2015-16_Sem2.jpg" target="_blank" class="button">Sem2 | 2015-16</a></li>
-                <li><a href="https://bsw.iitd.ac.in/studydatabase/CML/CML100/minor1/CML100_Minor1_2015-16_Sem2.pdf" target="_blank" class="button">Sem2 | 2015-16</a></li>
-                <li><a href="https://bsw.iitd.ac.in/studydatabase/CML/CML100/minor1/CML100_Minor1_2016-17_Sem2.jpg" target="_blank" class="button">Sem2 | 2016-17</a></li>
-                <li><a href="https://bsw.iitd.ac.in/studydatabase/CML/CML100/minor1/CML100_Minor1_2017-18_Sem1.pdf" target="_blank" class="button">Sem1 | 2017-18</a></li>
-                <li><a href="https://bsw.iitd.ac.in/studydatabase/CML/CML100/minor1/CML100_Minor1_2017-18_Sem2.pdf" target="_blank" class="button">Sem2 | 2017-18</a></li>
-                <li><a href="https://bsw.iitd.ac.in/studydatabase/CML/CML100/minor1/CML100_Minor1_2017-2018_Sem1-1.pdf" target="_blank" class="button">Sem1-1 | 2017-18</a></li>
-                <li><a href="https://bsw.iitd.ac.in/studydatabase/CML/CML100/minor1/CML100_Minor1_2018-19_Sem1.pdf" target="_blank" class="button">Sem1 | 2018-19</a></li>
-                <li><a href="https://bsw.iitd.ac.in/studydatabase/CML/CML100/minor1/CML100_Minor1_2019-20_Sem2-1.pdf" target="_blank" class="button">Sem2-1 | 2019-20</a></li>
-                <li><a href="https://bsw.iitd.ac.in/studydatabase/CML/CML100/minor1/CML100_Minor1_2019-20_Sem2.pdf" target="_blank" class="button">Sem2 | 2019-20</a></li>
-            </ul>
-        </div>
-        <div class="column">
-            <h2>Minor 2</h2>
-            <ul>
-                <li><a href="https://bsw.iitd.ac.in/studydatabase/CML/CML100/minor2/CML100_Minor2_2013-14_Sem2.pdf" target="_blank" class="button">Sem2 | 2013-14</a></li>
-                <li><a href="https://bsw.iitd.ac.in/studydatabase/CML/CML100/minor2/CML100_Minor2_2014-15_Sem1.pdf" target="_blank" class="button">Sem1 | 2014-15</a></li>
-                <li><a href="https://bsw.iitd.ac.in/studydatabase/CML/CML100/minor2/CML100_Minor2_2014-15_Sem2.pdf" target="_blank" class="button">Sem2 | 2014-15</a></li>
-                <li><a href="https://bsw.iitd.ac.in/studydatabase/CML/CML100/minor2/CML100_Minor2_2017-18_Sem1.pdf" target="_blank" class="button">Sem1 | 2017-18</a></li>
-                <li><a href="https://bsw.iitd.ac.in/studydatabase/CML/CML100/minor2/CML100_Minor2_2017-18_Sem2.jpg" target="_blank" class="button">Sem2 | 2017-18</a></li>
-                <li><a href="https://bsw.iitd.ac.in/studydatabase/CML/CML100/minor2/CML100_Minor2_2017-18_Sem2.pdf" target="_blank" class="button">Sem2 | 2017-18</a></li>
-                <li><a href="https://bsw.iitd.ac.in/studydatabase/CML/CML100/minor2/CML100_Minor2_2018-19_Sem1.jpg" target="_blank" class="button">Sem1 | 2018-19</a></li>
-                <li><a href="https://bsw.iitd.ac.in/studydatabase/CML/CML100/minor2/CML100_Minor2_2019-20_Sem2.pdf" target="_blank" class="button">Sem2 | 2019-20</a></li>
-            </ul>
-        </div>
-        <div class="column">
-            <h2>Majors</h2>
-            <ul>
-                <li><a href="https://bsw.iitd.ac.in/studydatabase/CML/CML100/major/CML100_Major_2014-15_Sem2.pdf" target="_blank" class="button">Sem2 | 2014-15</a></li>
-                <li><a href="https://bsw.iitd.ac.in/studydatabase/CML/CML100/major/CML100_Major_2015-16_Sem1.pdf" target="_blank" class="button">Sem1 | 2015-16</a></li>
-                <li><a href="https://bsw.iitd.ac.in/studydatabase/CML/CML100/major/CML100_Major_2017-18_Sem1-1.pdf" target="_blank" class="button">Sem1-1 | 2017-18</a></li>
-                <li><a href="https://bsw.iitd.ac.in/studydatabase/CML/CML100/major/CML100_Major_2017-18_Sem1-2.pdf" target="_blank" class="button">Sem1-2 | 2017-18</a></li>
-                <li><a href="https://bsw.iitd.ac.in/studydatabase/CML/CML100/major/CML100_Major_2017-18_Sem1-3.pdf" target="_blank" class="button">Sem1-3 | 2017-18</a></li>
-                <li><a href="https://bsw.iitd.ac.in/studydatabase/CML/CML100/major/CML100_Major_2018-19_Sem1.pdf" target="_blank" class="button">Sem1 | 2018-19</a></li>
-                <li><a href="https://bsw.iitd.ac.in/studydatabase/CML/CML100/major/CML100_Major_2018-19_Sem2-1.pdf" target="_blank" class="button">Sem2-1 | 2018-19</a></li>
-                <li><a href="https://bsw.iitd.ac.in/studydatabase/CML/CML100/major/CML100_Major_2019-20_Sem1.pdf" target="_blank" class="button">Sem1 | 2019-20</a></li>
-                <li><a href="https://bsw.iitd.ac.in/studydatabase/CML/CML100/major/CML100_Major_2019-20_Sem2.pdf" target="_blank" class="button">Sem2 | 2019-20</a></li>
-            </ul>
-        </div>
+        <div class="section">
+            <div class="dropdown outer">
+                <div class="dropdown-header">ONE SHOT</div>
+                <div class="dropdown-content">
+                    <a href="https://drive.google.com/file/d/1O89gUdIE8XjfYNSdezN2-YikGwyg9OwP/view?usp=drive_link">INORGANIC CHEMISTRY</a>
+                    <a href="https://drive.google.com/file/d/1bNnCw_9sZ9DLqfsMyghqShAphxrslz6c/view?usp=drive_link">ORGANIC CHEMISTRY</a>
+                    <a href="https://drive.google.com/drive/folders/1eBXcGAi4yAij9b0CLCDc7XCbxWg3anWX?usp=drive_link">QUANTUM CHEMISTRY</a>
+                    <a href="https://drive.google.com/file/d/1GmO11Lza1Qm1GTcaFoKjmeJkJ3-s-MYB/view?usp=drive_link">CFT KEY POINTS</a>
+                    <a href="https://drive.google.com/file/d/1htYrpzCuYBp62KPN8yEDGibm1XMdvjws/view?usp=drive_link">KINETICS</a>
+                    <a href="https://drive.google.com/file/d/1rhxmhvEjqp4af5iyCNQQLvu8dpWJiIOM/view?usp=drive_link">ORGANOMETALLIC CHEMISTRY REACTIONS</a>
+                    <a href="https://drive.google.com/file/d/1phu_W99MtqoEvHYEtbZtI91I3VP_eZ89/view?usp=drive_link">PHYSICAL</a>
+                    <a href="https://drive.google.com/file/d/1sECnqPjTeVQkQnpdtMG-WNrbG132r6_W/view?usp=drive_link">PROF KURUR AFTERNOTES</a>
+                    <a href="https://drive.google.com/file/d/1PAV0x6DYME6QgysDSkrqyeH_El97jkSX/view?usp=drive_link">USEFUL INTEGRAL FOR QUANTUM CHEMISTRY</a>
+                    </div>
+                    </div>      
+            </div>
+            <div class="dropdown outer">
+                <div class="dropdown-header">BOOKS</div>
+                <div class="dropdown-content">
+                    <a href="https://drive.google.com/file/d/1Wy9K3p9R2ASOzaIvH-5ckLdIWFjPZ5Mw/view?usp=drive_link">ATKINS</a>
+                    <a href="https://drive.google.com/drive/folders/1Sf0o0LpURSSM4qML7C9EgzdKTPfuFPcN?usp=drive_link">BD GUPTA, AJ ELIAS</a>
+                    <a href="https://drive.google.com/drive/folders/1eBXcGAi4yAij9b0CLCDc7XCbxWg3anWX?usp=drive_link">CLAYDEN</a>
+                    <a href="https://drive.google.com/drive/folders/16RX6L9_P5sdukjETQ1RGKbY0qiS6k3bN?usp=drive_link">ENGEL and reid</a>
+                    <a href="https://drive.google.com/drive/folders/1fslG4NKeg2o00L-BFx2_xfSX_TxeDeLc?usp=drive_link">IOC-PRINCIPLES OF STRUCTURE AND REACTIVITY</a>
+                    <a href="https://drive.google.com/drive/folders/1R5P21IYkxjwrw3YbwBy1EDyxFXxHYZ1g?usp=drive_link">LEVINE</a>
+                    <a href="https://drive.google.com/drive/folders/1eBXcGAi4yAij9b0CLCDc7XCbxWg3anWX?usp=drive_link">McQUARRIE</a>
+                    <a href="https://drive.google.com/drive/folders/1Yjk5IWSZ2iFYSSTZF8xQf5V2KBZK4PGX?usp=drive_link">SMITH</a>
+                    <a href="https://drive.google.com/file/d/1hZOZaFXYcjbnJrAqkQ27op-pES8YJbO6/view?usp=drive_link">PEARSON</a>
+                    </div>
+                    </div>      
+            </div>
+            <div class="dropdown outer">
+                <div class="dropdown-header">Previous Year Resources</div>
+                <div class="dropdown-content">
+                    
+                    <div class="dropdown inner">
+                        <div class="dropdown-header">Fall 2014</div>
+                        <div class="dropdown-content">
+                            <a href="https://drive.google.com/drive/folders/1vrmEqYfjYS6UngfCYu_OcakYyEwJOG5o?usp=drive_link">MINOR</a>
+                            
+                            
+                        </div>
+                    </div>
+                    <div class="dropdown inner">
+                        <div class="dropdown-header">Fall 2015</div>
+                        <div class="dropdown-content">
+                           <a href="https://drive.google.com/drive/folders/1xb2pRcN5Ufh2gB95Df28tsqCXC8BLSxX?usp=drive_link">MINOR</a> 
+                            
+                        </div>
+                    </div>
+                    <div class="dropdown inner">
+                        <div class="dropdown-header">Fall 2016</div>
+                        <div class="dropdown-content">
+                            <a href="https://drive.google.com/drive/folders/1-IFFKaRy6VO9P5uJ2uQtpXF43NF_bYEh?usp=drive_link">MINOR</a>
+                            
+                        </div>
+                    </div>
+                    <div class="dropdown inner">
+                        <div class="dropdown-header">Fall 2017</div>
+                        <div class="dropdown-content">
+                            
+                            <a href="https://drive.google.com/file/d/1Kkp26_cFUl0DDtpFYFoV9BldbyEkwvfI/view?usp=drive_link">Minor 1  </a>
+                            <a href="https://drive.google.com/file/d/1a4eJsPe8ftgxEjo_pv0NQYIWW7hGRwEs/view?usp=drive_link">Minor 2</a>
+                           
+                           </div>
+                    </div>
+                    <div class="dropdown inner">
+                        <div class="dropdown-header">Fall 2018</div>
+                        <div class="dropdown-content">
+                            <a href="https://drive.google.com/drive/folders/1VVD6LdYvTXSVlVFY3Hv2qup4aZrzc_Ph?usp=drive_link">MINOR</a>
+                            
+                            
+                           </div>
+                    </div>
+                    <div class="dropdown inner">
+                        <div class="dropdown-header">Fall 2020</div>
+                        <div class="dropdown-content">
+                            <a href="https://drive.google.com/file/d/1rekjY-Gss9Mnm1H2NEwzDAMiHHVNiMBI/view?usp=drive_link">Major</a>
+                            <a href="https://drive.google.com/file/d/1PdAbqvWoXtXtOA1SHnmePiZQYldIY8OE/view?usp=drive_link">Major Solution</a>
+                            <a href="https://drive.google.com/file/d/1Pa7irL4whAQIV_mB74dceLidAoJtebno/view?usp=drive_link">Minor 1  </a>
+                            <a href="https://drive.google.com/file/d/1M1cSyO5xdKwMth5U-kz0E6eeNekoufWK/view?usp=drive_link">Minor 1 Solutions </a>
+                            <a href="https://drive.google.com/file/d/1N_gvjeU3Qo9Jpd06vzCoW-Hl8pV-OQSb/view?usp=drive_link">Organic quiz</a>
+                            <a href="https://drive.google.com/file/d/1sV8paByCy_nMe6-yj44Zz6dPQlxtjV28/view?usp=drive_link">Organic quiz solution</a>
+                            <a href="https://drive.google.com/file/d/1eE9TtK-NTJLRSo8J8uE0_hqrhdXqtOA0/view?usp=drive_link">Tutorial</a>
+                            <a href="https://drive.google.com/file/d/1xWPnNNqI8J2VRbO7G827CgFlJRMLQvQP/view?usp=drive_link">Tutorial2</a>
+                            
+                           </div>
+                    </div>
+                    <div class="dropdown inner">
+                        <div class="dropdown-header">Fall 2021</div>
+                        <div class="dropdown-content">
+                            
+                            <a href="https://drive.google.com/file/d/1A_Gf4eMyyFTt9RgNyhvk85j5g8vC3CZF/view?usp=drive_link">Minor</a>
+                            <a href="https://drive.google.com/file/d/1rKIxnrwIsuWawKn9mIV-yxxx0TkT58nj/view?usp=drive_link">Minor Solutions</a>
+                        </div>
+                    </div>
+                    <div class="dropdown inner">
+                        <div class="dropdown-header">Fall 2021</div>
+                        <div class="dropdown-content">
+                            <a href="https://drive.google.com/file/d/1bxvYgfPUQeXJF0-f7dWKyo-f8_kqx6qI/view?usp=drive_link">Quiz 1</a>
+                            <a href="https://drive.google.com/file/d/1HY1VHOQrj1xvFzntu_t6mhohdMV_Wr3r/view?usp=drive_link">Minor Answers(organic)</a>
+                            <a href="https://drive.google.com/file/d/1pem1yPnYpJPGKbcpoChAp01zB7g4Qujj/view?usp=drive_link">Minor Answers(inorganic)</a>
+                            <a href="https://drive.google.com/file/d/1yxr_1u3MGeP0usroAkCCF47VAjicBP1U/view?usp=drive_link">ReMajor Answers</a>
+                            
+                        </div>
+                    </div>
+                    <div class="dropdown inner">
+                        <div class="dropdown-header">Fall 2023</div>
+                        <div class="dropdown-content">
+                            <a href="https://drive.google.com/file/d/1sOo2cQQmiYxMTM5hGOiXAuJsiWnbjz7i/view?usp=drive_link">Minor</a>
+                            <a href="https://drive.google.com/file/d/1AdtOvmBspW_CjggkjgH7vzcvJiojzKNl/view?usp=drive_link">Major Solutions</a>
+                            <a href="https://drive.google.com/file/d/13rrBEl72SYhwrwDMGTesAdDexyULKrdK/view?usp=drive_link">Minor Solutions(inorganic)</a>
+                            <a href="https://drive.google.com/file/d/1YxDI2TD738YULF63LQQYRurhluOEiN6_/view?usp=drive_link">Minor Solution(physical)</a>
+                            <a href="https://drive.google.com/file/d/1WujvtWCDxHcvqmH2oakYhXprCkKYupr1/view?usp=drive_link">Quiz1 solution</a>
+                            <a href="https://drive.google.com/file/d/1k6RSVCyZ1I56bCjG96a7AwSzwgIJMR_d/view?usp=drive_link">Quiz2 solutoin</a>
+                            <a href="https://drive.google.com/file/d/17Kpman4SSm_I5hIjgh__3wFmT8Ee_c4z/view?usp=drive_link">Quiz3 solution</a>
+                            
+                        </div>
+                    </div>
+                    <div class="dropdown inner">
+                        <div class="dropdown-header">Fall 2024</div>
+                        <div class="dropdown-content">
+                            <a href="https://drive.google.com/file/d/1ju6yS8wGkvU-LD6gzUe6r-DtVaVSYuhN/view?usp=drive_link">Major</a>
+                            <a href="https://drive.google.com/file/d/1lrTlgkN_TITyXujHLKQ_SIxcMjsO2-um/view?usp=drive_link">Minor</a>
+                            <a href="https://drive.google.com/file/d/1JJP1zsxp5ZRMpo85nL_epygtNTwWVVMN/view?usp=drive_link">Minor Solutions</a>
+                            <a href="https://drive.google.com/file/d/106DdfUOLabtAeK_XKF1mgDFkmQpCqMt0/view?usp=drive_link">Quiz1</a>
+                            <a href="https://drive.google.com/file/d/1l6oS1nW4bce0sI6_M9eKIKz9Psar51iR/view?usp=drive_link">Quiz1 Solutions</a>
+                            <a href="https://drive.google.com/file/d/1NNWsxGRr0bUTMXfAmpQX4iNNFxRvimTg/view?usp=drive_link">Quiz2 Answers</a>
+                            
+                        </div>
+                    </div>
+                    <div class="dropdown inner">
+                        <div class="dropdown-header">Spring 2011</div>
+                        <div class="dropdown-content">
+                            <a href="https://drive.google.com/file/d/1Lxg0swrpM8YKV1NXO3SkN17hSd2ptKdz/view?usp=drive_link">Minor</a>
+                            
+                        </div>
+                    </div>
+                    <div class="dropdown inner">
+                        <div class="dropdown-header">Spring 2014</div>
+                        <div class="dropdown-content">
+                            <a href="https://drive.google.com/file/d/1WbidUTVKjz7LMTVtWdtgcD85ucwTFQPT/view?usp=drive_link">Minor 1</a>
+                            
+                            <a href="https://drive.google.com/file/d/1rTOscB_RClrnVidK0H59O0giKowUHddZ/view?usp=drive_link">Minor 1 Solutions  </a>
+                            <a href="https://drive.google.com/file/d/1nQwJXwd7ipuGubPDQgbDilAsubYODmXs/view?usp=drive_link">Minor 2  </a>
+                            
+                            <a href="https://drive.google.com/file/d/119kXMIde0Vm1_SlPHdeb0VQZtoyjGa2z/view?usp=drive_link">Minor 2 Solutions </a>
+                            
+                            
+                        </div>
+                    </div>
+                    <div class="dropdown inner">
+                        <div class="dropdown-header">Spring 2016</div>
+                        <div class="dropdown-content">
+                            <a href="https://drive.google.com/file/d/1EOh2FkwL1fcEem13-slEb3jUVP3WVS6J/view?usp=drive_link">Minor 1</a>
+                           
+                            
+                        </div>
+                    </div>
+                    <div class="dropdown inner">
+                        <div class="dropdown-header">Spring 2018</div>
+                        <div class="dropdown-content">
+                            <a href="https://drive.google.com/file/d/1F_n34kPLBEF9uLTQPqmt2eJpq--m-6u8/view?usp=drive_link">Minor 2</a>
+                           
+                            
+                        </div>
+                    </div>
+                    <div class="dropdown inner">
+                        <div class="dropdown-header">Spring 2021</div>
+                        <div class="dropdown-content">
+                            <a href="https://drive.google.com/file/d/13UV3HSKXxBgeaCCMC5qndARnjYYLne4Q/view?usp=drive_link">Major</a>
+                            <a href="https://drive.google.com/file/d/1hctUyZgy4K2TBP2rwfiEIUyLD9fsdYzx/view?usp=drive_link">Major Solution</a>
+                       
+                           
+                            
+                        </div>
+                    </div>
+                    <div class="dropdown inner">
+                        <div class="dropdown-header">Spring 2022</div>
+                        <div class="dropdown-content">
+                            <a href="https://drive.google.com/drive/u/1/folders/1rF6CWSWU0VcmQqX6VmPh3UP8Jekn-na0">Spring 2022</a>
+                            
+                        </div>
+                    </div>
+                    <div class="dropdown inner">
+                        <div class="dropdown-header">Spring 2023</div>
+                        <div class="dropdown-content">
+                            <a href="https://drive.google.com/drive/u/1/folders/1ZL4xl5-27S4Olk4uZ0M1XKIpRa6g2gPc">Spring 2023</a>
+                            
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+            <div class="dropdown outer">
+                <div class="dropdown-header">EXAM</div>
+                <div class="dropdown-content">
+                    
+                    <div class="dropdown inner">
+                        <div class="dropdown-header">EXTRA</div>
+                        <div class="dropdown-content">
+                            <li><a href="https://drive.google.com/file/d/18OEtPEgrgBm-ZZv-8JuvaI9W8ig_pUPx/view?usp=drive_link" target="_blank" rel="noopener" class="button">Commmon instructor quizes</a></li>
+                            <li><a href="https://drive.google.com/file/d/1OK79J7KKOt1-BlkZG82AlVvt9r2AQ4y2/view?usp=drive_link" target="_blank" rel="noopener" class="button">Answers to common instructor quizes</a></li>
+                            <li><a href="https://drive.google.com/file/d/17FOzZC83akNwq6dhrfn7UgF_8w2ohVZ2/view?usp=drive_link" target="_blank" rel="noopener" class="button">INORGANIC TUTORIAL QUIZ</a></li>
+                            <li><a href="https://drive.google.com/file/d/1fdWRTjSeH0RmWRhmikc31uiVEi1qHMoe/view?usp=drive_link" target="_blank" rel="noopener" class="button">MAJOR EXAM</a></li>
+                            <li><a href="https://docs.google.com/document/d/1Bd11YQLJD0SnTmCC2Fo1uSbcUnOLnNn3/edit?usp=drive_link&ouid=103228566671420085638&rtpof=true&sd=true" target="_blank" rel="noopener" class="button">MAJOR EXAM INORGANIC</a></li>
+                            <li><a href="https://drive.google.com/file/d/1UreKzipOxRowJNEKGq6orDDcEOXHVr7a/view?usp=drive_link" target="_blank" rel="noopener" class="button">MINOR 1</a></li>
+                            <li><a href="https://drive.google.com/file/d/1avqIavtN3srOSOrocfWjo4pkI3A_eXO3/view?usp=drive_link" target="_blank" rel="noopener" class="button">MINOR SOLUTION</a></li>
+                            <li><a href="https://docs.google.com/document/d/1d3qhy3RNVl54lCgD7Z_q3iPfWylcElNw/edit?usp=drive_link&ouid=103228566671420085638&rtpof=true&sd=true" target="_blank" rel="noopener" class="button">ORGANIC MAJOR ANSWERKEY</a></li>
+                            <li><a href="https://docs.google.com/document/d/1G8zthQM-SzS1R6Voz0AKnQEARU5gWAH2/edit?usp=drive_link&ouid=103228566671420085638&rtpof=true&sd=true" target="_blank" rel="noopener" class="button">PHYSICAL MAJOR ANSWERKEY</a></li>
+                            <li><a href="https://drive.google.com/file/d/1-bzq5c4y-kr8QOAdz66qja8_tb-ZuOsm/view?usp=drive_link" target="_blank" rel="noopener" class="button">TUT EXAM</a></li>
+                            <li><a href="https://drive.google.com/file/d/1WshUtAiSyfie9S1Vh5qeZfuYZXsXiRoZ/view?usp=drive_link" target="_blank" rel="noopener" class="button">TUT EXAM SUBMISSION</a></li>
+                            <li><a href="https://drive.google.com/file/d/1ag0xjEOZOn0VT-Z9hw0ozq3-JhVpvJ5x/view?usp=drive_link" target="_blank" rel="noopener" class="button">PHYSICAL QUIZ</a></li>
+                        
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="dropdown outer">
+                <div class="dropdown-header">BSW RESOURCES</div>
+               
+                        <div class="dropdown-content">
+                            <div class="dropdown inner">
+                                <div class="dropdown-header">MINOR 1</div>
+                                <div class="dropdown-content">
+                                    <li><a href="https://bsw.iitd.ac.in/studydatabase/CML/CML100/minor1/CML100_Minor1_2014-15_Sem2.pdf" target="_blank" rel="noopener" class="button">Sem2 | 2014-15</a></li>
+                                    <li><a href="https://bsw.iitd.ac.in/studydatabase/CML/CML100/minor1/CML100_Minor1_2015-16_Sem2.jpg" target="_blank" rel="noopener" class="button">Sem2 | 2015-16</a></li>
+                                    <li><a href="https://bsw.iitd.ac.in/studydatabase/CML/CML100/minor1/CML100_Minor1_2015-16_Sem2.pdf" target="_blank" rel="noopener" class="button">Sem2 | 2015-16</a></li>
+                                    <li><a href="https://bsw.iitd.ac.in/studydatabase/CML/CML100/minor1/CML100_Minor1_2016-17_Sem2.jpg" target="_blank" rel="noopener" class="button">Sem2 | 2016-17</a></li>
+                                    <li><a href="https://bsw.iitd.ac.in/studydatabase/CML/CML100/minor1/CML100_Minor1_2017-18_Sem1.pdf" target="_blank" rel="noopener" class="button">Sem1 | 2017-18</a></li>
+                                    <li><a href="https://bsw.iitd.ac.in/studydatabase/CML/CML100/minor1/CML100_Minor1_2017-18_Sem2.pdf" target="_blank" rel="noopener" class="button">Sem2 | 2017-18</a></li>
+                                    <li><a href="https://bsw.iitd.ac.in/studydatabase/CML/CML100/minor1/CML100_Minor1_2017-2018_Sem1-1.pdf" target="_blank" rel="noopener" class="button">Sem1-1 | 2017-18</a></li>
+                                    <li><a href="https://bsw.iitd.ac.in/studydatabase/CML/CML100/minor1/CML100_Minor1_2019-20_Sem2-1.pdf" target="_blank" rel="noopener" class="button">Sem2-1 | 2019-20</a></li>
+                                    <li><a href="https://bsw.iitd.ac.in/studydatabase/CML/CML100/minor1/CML100_Minor1_2019-20_Sem2.pdf" target="_blank" rel="noopener" class="button">Sem2 | 2019-20</a></li>
+                            </div>
+                            </div>
+                            <div class="dropdown inner">
+                                <div class="dropdown-header">MINOR 2</div>
+                                <div class="dropdown-content">
+                                    <li><a href="https://bsw.iitd.ac.in/studydatabase/CML/CML100/minor2/CML100_Minor2_2013-14_Sem2.pdf" target="_blank" rel="noopener" class="button">Sem2 | 2013-14</a></li>
+                                    <li><a href="https://bsw.iitd.ac.in/studydatabase/CML/CML100/minor2/CML100_Minor2_2014-15_Sem1.pdf" target="_blank" rel="noopener" class="button">Sem1 | 2014-15</a></li>
+                                    <li><a href="https://bsw.iitd.ac.in/studydatabase/CML/CML100/minor2/CML100_Minor2_2014-15_Sem2.pdf" target="_blank" rel="noopener" class="button">Sem2 | 2014-15</a></li>
+                                    <li><a href="https://bsw.iitd.ac.in/studydatabase/CML/CML100/minor2/CML100_Minor2_2017-18_Sem1.pdf" target="_blank" rel="noopener" class="button">Sem1 | 2017-18</a></li>
+                                    <li><a href="https://bsw.iitd.ac.in/studydatabase/CML/CML100/minor2/CML100_Minor2_2017-18_Sem2.jpg" target="_blank" rel="noopener" class="button">Sem2 | 2017-18</a></li>
+                                    <li><a href="https://bsw.iitd.ac.in/studydatabase/CML/CML100/minor2/CML100_Minor2_2017-18_Sem2.pdf" target="_blank" rel="noopener" class="button">Sem2 | 2017-18</a></li>
+                                    <li><a href="https://bsw.iitd.ac.in/studydatabase/CML/CML100/minor2/CML100_Minor2_2018-19_Sem1.jpg" target="_blank" rel="noopener" class="button">Sem1 | 2018-19</a></li>
+                                    <li><a href="https://bsw.iitd.ac.in/studydatabase/CML/CML100/minor2/CML100_Minor2_2019-20_Sem2.pdf" target="_blank" rel="noopener" class="button">Sem2 | 2019-20</a></li>
+                                </div>
+                            </div>
+                            <div class="dropdown inner">
+                                <div class="dropdown-header">MAJOR</div>
+                                <div class="dropdown-content">
+                                    <li><a href="https://bsw.iitd.ac.in/studydatabase/CML/CML100/major/CML100_Major_2014-15_Sem2.pdf" target="_blank" rel="noopener" class="button">Sem2 | 2014-15</a></li>
+                                    <li><a href="https://bsw.iitd.ac.in/studydatabase/CML/CML100/major/CML100_Major_2015-16_Sem1.pdf" target="_blank" rel="noopener" class="button">Sem1 | 2015-16</a></li>
+                                    <li><a href="https://bsw.iitd.ac.in/studydatabase/CML/CML100/major/CML100_Major_2017-18_Sem1-1.pdf" target="_blank" rel="noopener" class="button">Sem1-1 | 2017-18</a></li>
+                                    <li><a href="https://bsw.iitd.ac.in/studydatabase/CML/CML100/major/CML100_Major_2017-18_Sem1-2.pdf" target="_blank" rel="noopener" class="button">Sem1-2 | 2017-18</a></li>
+                                    <li><a href="https://bsw.iitd.ac.in/studydatabase/CML/CML100/major/CML100_Major_2017-18_Sem1-3.pdf" target="_blank" rel="noopener" class="button">Sem1-3 | 2017-18</a></li>
+                                    <li><a href="https://bsw.iitd.ac.in/studydatabase/CML/CML100/major/CML100_Major_2018-19_Sem1.pdf" target="_blank" rel="noopener" class="button">Sem1 | 2018-19</a></li>
+                                    <li><a href="https://bsw.iitd.ac.in/studydatabase/CML/CML100/major/CML100_Major_2018-19_Sem2-1.pdf" target="_blank" rel="noopener" class="button">Sem2-1 | 2018-19</a></li>
+                                    <li><a href="https://bsw.iitd.ac.in/studydatabase/CML/CML100/major/CML100_Major_2019-20_Sem1.pdf" target="_blank" rel="noopener" class="button">Sem1 | 2019-20</a></li>
+                                    <li><a href="https://bsw.iitd.ac.in/studydatabase/CML/CML100/major/CML100_Major_2019-20_Sem2.pdf" target="_blank" rel="noopener" class="button">Sem2 | 2019-20</a></li>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            
+            </div>
+        <footer>
+            <p>&copy; 2025 ALL RIGHTS RESERVED </p>
+            <p><a href="mailto:RESOURCESFRESHER@GMAIL.COM" style="color: white;">Contact for changes</a></p>
+        </footer>
     </div>
-    
-    
-
-    <footer>
-        <h3>DEVELOPED BY MONIL</h3>
-        <p><a href="mailto:monilsavaliya416@gmail.com">FOR ANY CHANGES CONTACT: MONIL</a></p>
-        <p>&copy; 2025</p>
-    </footer>
-
 </body>
 </html>
